@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorted array</title>
+    <script>
+        //call this types loops a nesty loops
+        
+        let len = [23, 4, 56, 77, 3, 7, 6];
+        for (i = 0; i < len.length; i++) {
+            for (j = 0; j < len.length; j++) {
+                //console.log(len)
+                if (len[j] > len[j + 1]) {
+                    let tem = len[j];
+                    len[j]=len[j+1];
+                    len[j+1]=tem
+                }
+            }
+            //console.log(i);
+        }
+        console.log(len);
+
+    </script>
+</head>
+<body>
+</body>
+
+</html>

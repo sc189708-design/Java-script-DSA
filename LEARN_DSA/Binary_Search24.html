@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // class call {
+        //     constructor(val) {
+        //         this.value = val;
+        //         this.left = null;
+        //         this.right = null;
+        //     }
+        // }
+        // class Call {
+        //     funcall() {
+        //         this.callval = null;
+        //     }
+        //     twofun() {
+        //         return this.callval == null
+        //     }
+        //     addval(val) {
+        //         let nodeval = new call(val);
+        //         if (this.callval == null) {
+        //             this.callval = nodeval
+        //         }
+        //         else {
+        //             this.insetvalue(this.callval, nodeval);
+        //         }
+        //     }
+        //     insetvalue(callval, nodeval) {
+        //         if (callval.value > nodeval.value) {
+        //             if (callval.left == null) {
+        //                 callval.left = nodeval
+        //             }
+        //             else {
+        //                 this.insetvalue(callval.left, nodeval)
+        //             }
+        //         }
+        //         else {
+        //             if (callval.right == null) {
+        //                 callval.right = nodeval
+        //             }
+        //             else {
+        //                 this.insetvalue(callval.right, nodeval)
+        //             }
+        //         }
+        //     }
+        // }
+        // let data = new Call();
+        // data.addval(30)
+        // data.addval(25)
+        // data.addval(15)
+        // console.log(data)
+
+        class Data {
+            constructor(val) {
+                this.vlaue = val;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        class Call {
+            constructor() {
+                this.root = null
+            }
+            back() {
+                return this.root == null
+            }
+            addval(valu) {
+                let nodevalue = new Data(valu);
+                if (this.root == null) {
+                    this.root = nodevalue;
+                }
+                else {
+                    this.thrid(this.root, nodevalue);
+                }
+            }
+            thrid(root, nodeval) {
+                if (root.vlaue > nodeval.vlaue) {
+                    if (root.left == null) {
+                        root.left = nodeval
+                    }
+                    else {
+                        this.thrid(root.left, nodeval);
+                    }
+                }
+                else {
+                    if (root.right == null) {
+                        root.right = nodeval;
+                    } else {
+                        this.thrid(root.right, nodeval)
+                    }
+                }
+            }
+
+            // the function of the serach ....
+            search(root, val) {
+                if (root == null) {
+                    return false;
+                } else if (root.vlaue == val) {
+                    return true;
+                } else if (root.vlaue > val) {
+                    return this.search(root.left, val)
+                }
+                else {
+                    return this.search(root.right, val)
+                }
+            }
+
+            //dept First search  Preorder
+            preorder(root) {
+                if (root) {
+                    //console.log(root.vlaue)
+                    this.preorder(root.left)
+                    this.preorder(root.right)
+                }
+            }
+
+            // this is example of the inorder
+            inorder(root) {
+                if (root) {
+                    this.inorder(root.left)
+                    // console.log(root.vlaue)
+                    this.inorder(root.right)
+                }
+            }
+
+            //this exampel of the postorder
+            postorder(root) {
+                if (root) {
+                    this.postorder(root.left);
+                    this.postorder(root.right);
+                    console.log(root.vlaue)
+                }
+            }
+
+            //this is exampel of the Breath first search
+            breath() {
+                let data = [];
+                data.push(this.root)
+                while (data.length) {
+                    let nowdata = data.shift()
+                    if (nowdata.left) {
+                        data.push(nowdata.left)
+                    }
+                    if (nowdata.right) {
+                        data.push(nowdata.right)
+                    }
+                    console.log(nowdata.vlaue)
+                }
+            }
+
+            // this is min vlaue example
+            minval(root) {
+                if (!root.left) {
+                    return root.vlaue
+                }
+                else {
+                    return this.minval(root.left)
+                }
+            }
+            maxval(root) {
+                if (!root.right) {
+                    return root.vlaue
+                }
+                else {
+                    return this.maxval(root.right)
+                }
+            }
+
+            // exaple of the Delete node...
+
+            thedel(val){
+                this.root = this.deldata(this.root, val)
+            }
+
+            deldata(root, val){
+                if(root == null){
+                    return null;
+                }
+                if(val<root.vlaue){
+                    root.left = this.deldata(root.left, val)
+                }
+                else if(val> root.vlaue){
+                    root.right = this.deldata(root.right, val)
+                }
+                else{
+                    if(!root.left && !root.right){
+                        return null;
+                    }
+                    else if(!this.left){
+                        return this.right;
+                    }
+                    else if(!this.right){
+                        return this.left;
+                    }
+                    this.vlaue = this.minval(root.right);
+                    root.right = this.deldata(root.right,val)
+                }
+                return root;
+            }
+            // thedel(val){
+            //     this.root = this.deldata(this.root, val)
+            // }
+            // deldata(root, val){
+            //     if(root == null){
+            //         return null;
+            //     }
+            //     if(val<root.vlaue){
+            //         root.left = this.deldata(root.left, val);
+            //     }
+            //     else if(val>root.vlaue){
+            //         root.right =  this.deldata(root.right, val);
+            //     }
+            //     else {
+            //         if(!root.right && !root.left){
+            //             return null;
+            //         } else if (!root.left){
+            //             return root.right
+            //         } else if (!root.right){
+            //             return root.left
+            //         }
+            //     root.vlaue = this.minval(root.right)
+            //     root.right = this.deldata(root.right , root.vlaue)
+            //     }
+            //     return root;
+            // }
+        }
+        let data = new Call();
+        data.addval(30)
+        data.addval(20)
+        data.addval(5)
+        data.addval(15)
+        data.addval(35)
+        data.addval(40)
+        data.addval(33)
+        // data.preorder(data.root)
+        //data.inorder(data.root)
+        //data.postorder(data.root)
+        // data.breath();
+        console.log('minum value is ', data.minval(data.root))
+        console.log('minum value is ', data.maxval(data.root))
+        console.log('this vlaue is ', data.search(data.root, 45))
+        data.thedel(5)
+        console.log(data)
+        data.breath();
+    </script>
+</head>
+
+<body>
+    <h1>this example of Binary search</h1>
+</body>
+
+</html>

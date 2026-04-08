@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example of the Graph </title>
+    <script>
+        //example of the Graph
+        let data = [
+            [0, 1, 1, 1],
+            [1, 0, 1, 0],
+            [1, 1, 0, 1],
+            [1, 0, 1, 0]
+        ]
+        //console.log(data)
+        // console.log(data[3][0]) this is exmple of the check the problems
+
+        // example of the List 
+        let listdata = {
+            "a": ['b', 'c', 'd'],
+            "b": ['a', 'c'],
+            "c": ['a', 'b', 'd'],
+            "d": ['a', 'c']
+        }
+        //console.log(listdata.a)
+
+        //example of the  Graph vertex.
+        class Call {
+            constructor() {
+                this.data = {};
+            }
+            addval(val) {
+                if (!this.data[val]) {
+                    this.data[val] = [];
+                }
+            }
+            addtotal(v1, v2) {
+                if (!this.data[v1]) {
+                    this.val = [v1]
+                }
+                if (!this.data[v2]) {
+                    this.val = [v2]
+                }
+                this.data[v1].push(v2)
+                this.data[v2].push(v1)
+            }
+
+            // Remove Edge in Garp
+            remove(v1, v2){
+                this.data[v1] = this.data[v1].filter(val => val !== v2);
+                this.data[v2] = this.data[v2].filter(val => val !== v1);
+            }
+        }
+        let put = new Call();
+        put.addval("A")
+        put.addval("B")
+        put.addval("C")
+        put.addval("D")
+        put.addtotal("A", "B");
+        put.addtotal("A", "C");
+        put.addtotal("B", "C");
+        put.addtotal("A", "D");
+        put.addtotal("C", "D");
+        put.remove("A", "B")
+        put.remove("C", "D")
+        console.log(put.data)
+    </script>
+</head>
+
+<body>
+    <div style="font-family: Arial, Helvetica, sans-serif; ">
+        <div style="display: flex; justify-content: center;">
+            <h1> This exrise I'm study about the Graph </h1>
+        </div>
+        <h1>(1) In this part i learn about the (Graph Adjacency Matrix)</h1>
+        <h1>(2) and Example of the Adjacency List</h1>
+        <h1>(3)Make graph and Add vertex</h1>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort</title>
+    <script>
+        let surajdata = [12, 11, 23, 5, 34, 2, 7,15,9];
+        let total = surajdata.length;
+        let current = undefined;
+        function calls(fir, sec, third){
+            let i, j;
+            for(i=1 ; i<sec; i++){
+                third = fir[i];
+                j = i-1;
+                while(j>=0 & fir[j] < third){
+                    fir[j+1] = fir[j]
+                    j--;
+                }
+                fir[j+1] = third;
+            }
+        }
+        calls(surajdata,total,current);
+        console.log(surajdata);
+
+    </script>
+</head>
+
+<body>
+    <h1>Insertion Sort Array Example</h1>
+</body>
+
+</html>
+
+ <!-- let data = [12, 11, 23, 5, 34, 2, 7,15,9];
+        function mydata(arry){
+            let i,curent,j;
+            for(i=1; i<arry.length; i++){
+                curent = arry[i]
+                j = i-1;
+                while(j>=0 & data[j]>curent){
+                    data[j+1] = data[j];
+                    j = j-1;
+                }
+                data[j+1] = curent
+            }
+        }
+        mydata(data)
+        console.log(data) -->

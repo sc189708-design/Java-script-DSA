@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class list {
+            constructor(data) {
+                this.head = {
+                    vlaue: data,
+                    next: null
+                }
+                this.tail = this.head;
+                this.size = 1;
+            }
+            suraj(dataenter) {
+                let newdata = {
+                    vlaue: dataenter,
+                    next: null
+                }
+                this.tail.next = newdata;
+                this.tail = newdata;
+                this.size++;
+            }
+            //Traversing Liked;
+
+            calls() {
+                let current = 0;
+                let showvlaue = this.head
+                while (current < this.size) {
+                    //console.log(showvlaue)
+                    showvlaue = showvlaue.next
+                    current++
+                }
+            }
+            // Remove node from likden list 
+            delete(idex) {
+                let start = 1;
+                let show = this.head;
+                if (idex === 1) {
+                    this.head = this.head.next;
+                }
+                else {
+                    while (start < idex - 1) {
+                        show = show.next
+                        start++
+                    }
+                    let nextvalue = show.next.next;
+                    show.next = nextvalue;
+                    // console.log(show)
+                }
+            }
+
+            //Inseri Node at any postion in Linked list
+            insert(index, val) {
+                let cureent = 1;
+                let nowval = this.head;
+                while (cureent > index) {
+                    cureent++
+                    nowval = nowval.next;
+                }
+                const nextval = nowval.next;
+                nowval.next = {
+                    vlaue: val,
+                    next: nextval
+                }
+            }
+            // Serach linked list..
+            serach(val) {
+                let res = undefined;
+                let valdata = this.head;
+                let data = true;
+                while (data) {
+                    valdata = valdata.next;
+                    data = !!valdata;
+                    if (data && valdata.vlaue === val) {
+                        data = false;
+                        res = valdata
+                        console.log(res)
+                    }
+                }
+            }
+            // search linkden value how in elments 
+            elment(bul) {
+                let showres = undefined;
+                let count = 0;
+                let showdata = this.head;
+                if (showdata.vlaue == bul) {
+                    showres = count;
+                    console.log(bul, 'is avilabel in ', showres + 1, 'postion')
+                }
+                while (count < this.size) {
+                    showdata = showdata.next;
+                    count++
+                     if (showdata.vlaue === bul) {
+                        showres = count
+                        console.log(bul, 'is avilabel in ', showres, 'postion')
+                    }
+                }
+                if(showres == undefined){
+                        console.log('this value is not avilabel')
+                    }
+            }
+        }
+
+        let data = new list(110);
+        data.suraj(200)
+        data.suraj(400)
+        data.suraj(700)
+        data.suraj(900)
+        data.calls();
+        //data.delete();
+        data.insert(2, 170)
+        data.serach(700)
+        data.elment(900)
+        console.log(data)
+
+        //Example of function
+
+        let head = {
+            head: {
+                vlaue: 100,
+                next: null
+            },
+        }
+
+        function call(sec) {
+            let tail = sec
+
+            function dodata(vals) {
+                let newdata = {
+                    vlaue: vals,
+                    next: null
+                }
+                tail.next = newdata;
+                tail = newdata
+            }
+            dodata(200)
+            dodata(300)
+            dodata(500)
+            dodata(700)
+        }
+        call(head)
+        // console.log(head)
+    </script>
+</head>
+
+<body>
+    <h1>Example of Liked list</h1>
+</body>
+
+</html>

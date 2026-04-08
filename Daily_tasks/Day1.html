@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //solve to normal style....
+    function call2() {
+        let array = [7, 2, 11, 15];
+        let target = 9;
+        for (i = 0; i < array.length; i++) {
+            for (j = 1; j < array.length; j++) {
+                if (array[i] + array[j] === target) {
+                    console.log([array[i], array[j]])
+                }
+            }
+        }
+    }
+    //solve to interview qustion type....
+    function call1() {
+        let value = [3, 4, 22, 21];
+        let show = 26;
+        let val = {};
+        for (i = 0; i < value.length; i++) {
+            let total = show - value[i]
+            if (val[total] !== undefined) {
+                console.log([total, value[i]])
+            }
+            val[value[i]] = i;
+        }
+    }
+
+    // find max vlaue 
+    function Max() {
+        let val = [12, 15, 17, 33, 19,73, 31, 45, 21]
+        let max = val[1];
+        for (i = 0; i < val.length; i++) {
+            if (val[i] > max) {
+                max = val[i]
+            }
+        }
+        console.log(max)
+    }
+</script>
+
+<body>
+    <h1>Today is my day one Java script Dsa daily tasks</h1>
+</body>
+
+</html>

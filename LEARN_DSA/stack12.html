@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack-Example</title>
+
+    <script>
+        /*
+        let num = [];
+        let totalnum = num.length;
+        let max = 7;
+        function push(val) {
+
+            if (totalnum >= max) {
+                alert('your vlaue is greater than max vlaue  ' + val)
+            }
+            num[totalnum] = val;
+            totalnum += 1;
+        }
+        function pop() {
+            if (totalnum > 0) {
+                totalnum -= 1;
+                num.length = totalnum
+            }
+            else {
+                alert('this is alredy empty remove pop value')
+            }
+        }
+        push(1)
+        push(3)
+        push(5)
+        pop()
+
+        //console.log(num) */
+
+        //make push and pop button add value use button and remove value use button 
+
+        let add = [];
+        let total = add.length;
+        let maxnum = 5;
+
+        function push() {
+            const val = parseInt(document.getElementById('adds').value);
+            if (total >= maxnum) {
+                alert('The vlaue is max out' + add)
+            }
+            else {
+                add[total] = val;
+                total += 1
+                document.getElementById('adds').value = "";
+                console.log('the vlue is add')
+            }
+            //console.log(add)
+        }
+        function pop() {
+            if (total > 0) {
+                total -= 1;
+                add.length = total;
+                console.log('the vlaue is delete')
+            }
+            else{ 
+                alert('your array is alreday empty') 
+            }
+            //console.log(add);
+        }
+
+        function display(){
+            for(let i=0; i<=total-1; i++){
+                console.log('the array value is down here ');
+            }
+            console.log(add); 
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Stack Example</h1>
+    <p>Enter the add vlue use <b>(add-value) button</b> and delete the value use <b> delete button </b> <br>
+    and you display the vlaue use <b>Display button </b> </p>
+    <input type="text" id="adds" placeholder="enter here push vlue">
+    <button onclick="push()">add-value</button>
+    <button onclick="pop()">delete</button>
+    <button onclick="display()">display</button>
+</body>
+
+</html>

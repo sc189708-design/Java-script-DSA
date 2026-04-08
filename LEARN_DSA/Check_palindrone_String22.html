@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrone-String</title>
+    <script>
+        let nam = "level";
+        let arr = nam.split('');
+
+        function check(data, start, end) {
+            if(start<=end){
+                tem = data[start]
+                data[start]=data[end]
+                data[end] = tem;
+                check(data, start+1, end-1)
+            }
+            else if(data[start]==data[end]){
+                console.log('this vlaue is palindrone')
+            }
+            else{
+                console.log('this vlaue is not a palindrone vlaue')
+            }
+        }
+        check(arr, 0, arr.length - 1);
+        console.log(arr.join(''))
+    </script>
+</head>
+
+<body>
+    <h1>Example of Palindrone string</h1>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let arr = [1, 4, 6, 8, 9, 10, 45, 42];
+        let postion = 3;
+        let vlueadd = 7;
+        for(let i=arr.length; i>=0; i--){
+            if(i == postion){
+                arr[i+1] = arr[i]
+                if(i == postion){
+                    arr[i] = vlueadd;
+                }
+            }
+        }
+        console.log(arrz);
+
+        function suraj() {
+            const fir = parseInt(document.getElementById("sur").value);
+            const sec = parseInt(document.getElementById("sur1").value);
+            if (fir < arr.length && fir >= 0 && typeof parseInt(fir) == "number") {
+            } else {
+                console.warn("plase enter valid values");
+            }
+            for (let i = arr.length - 1; i >= 0; i--) {
+                if (i >= fir) {
+                    arr[i + 1] = arr[i];
+                    if (i == fir) {
+                        arr[i] = sec
+                    }
+                }
+            }
+            console.log(arr);
+        }
+        // console.warn(arr);    
+    </script>
+</head>
+
+<body>
+    <h1>change array vlaue</h1>
+    <input type="text" id="sur" placeholder="position"><input type="text" id="sur1" placeholder="value"><button id="cli"
+        onclick="suraj()">enter</button>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arry = [1,2,3,4,34,5,6,7];
+        // postion = 4;
+        // for(let i=postion; i<arry.length; i++){
+        //     arry[i] = arry[i+1]
+        // }
+        // arry.length = arry.length-1
+        // console.log(arry)
+
+        function chal(){
+            const input = parseInt(document.getElementById("input").value)
+            for(let i=input; i<arry.length; i++){
+                arry[i] = arry[i+1]
+            }
+            arry.length = arry.length-1;
+            document.write(arry)
+            console.log(arry);
+        }
+        console.log(arry);
+    </script>
+</head>
+<body>
+    <h1>You select which array you delete</h1>
+    <input type="text" id="input" placeholder="enter-delete-array-number">
+    <button onclick="chal()">chilk me!</button>
+</body>
+</html>

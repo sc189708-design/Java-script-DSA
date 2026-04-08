@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+    <script>
+        let data = [1, 45, 3, 6, 88, 67, 43]
+        function suraj(items) {
+            let mid;
+            for (let i = 0; i < items.length; i++) {
+                mid = i;
+                for (let j = i + 1; j < items.length; j++) {
+                    if(items[j] > items[mid]){
+                        mid = j;
+                    }
+                }
+                let tem = items[mid]
+                items[mid] = items[i]
+                items[i] = tem;
+            }
+        }
+        suraj(data)
+        console.log(data)
+    </script>
+</head>
+
+<body>
+    <h1>Selection Sort</h1>
+    <p>this is example of selection sort algorithm</p>
+</body>
+
+</html>

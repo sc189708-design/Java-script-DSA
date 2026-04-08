@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum-occurring-string</title>
+    <script>
+        let str = 'suraja chandel ji';
+        let obj = {};
+        let max = "";
+        for (i = 0; i < str.length; i++) {
+            let key = str[i]
+            if (!obj[key]) {
+                obj[key] = 0
+            }
+            obj[key]++
+            if(max == "" || obj[key] > obj[max]){
+                max = key 
+            }
+        }
+        console.log(str)
+        console.log(max)
+    </script>
+</head>
+
+<body>
+    <h1>Maximum Occurring String</h1>
+</body>
+
+</html>

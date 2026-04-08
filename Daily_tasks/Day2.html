@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // palindrome vlaue
+        function call() {
+            let val = 'suraj';
+            let result = true;
+            let left = 0;
+            let right = val.length-1;
+            while(left<right){
+                if(val[left] !== val[right]){
+                    result = false;
+                    break;
+                }
+                left++
+                right--
+            }
+            if(result){
+                console.log('the vlaue is Palindrome')
+            }
+            else{
+                console.log('the value is not a Palindrome')
+            }
+        }
+
+    // Find first non-repeating character
+    function call2(){
+        let val = 'aabccdeff'
+        let val2 = {};
+        for(i=0; i<val.length; i++){
+           if(val2[val[i]]){
+            val2[val[i]]++;
+           }
+           else{
+            val2[val[i]] = 1
+           }
+        }
+           for(i=0 ; i<val.length; i++){
+               if(val2[val[i]] ===1){
+                console.log(val[i])
+                break;  
+               }
+           }
+        console.log('The vlaue is =>',val)
+    }
+    console.log([]+ [ ])
+    // Even / odd function likhna hai
+    function val() {
+        let vlaue = 15
+        if(vlaue%2 === 0){
+            console.log('the vlaue is even')
+        }
+        else{
+            console.log('the vlaue was odd')
+        }
+    }
+    val();
+    //Revers string function likhna hai
+    function Revres() {
+        let str = 'suraj'
+        let rev = ''
+        for(i=str.length-1 ; i>=0 ; i--){
+            rev += str[i]
+        }
+        console.log(rev)
+    }
+    Revres()
+    </script>
+</head>
+
+<body>
+    <h1>Hey today is day 2 continew dsa journy </h1>
+</body>
+
+</html>

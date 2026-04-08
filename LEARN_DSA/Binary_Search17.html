@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binary Search</title>
+    <script>
+        let data = [3,7,9,11,17,21,23]
+        let find = 21;
+        let start = 0;
+        let end = data.length-1;
+        let posting = undefined;
+        while(start<=end){
+           let center = Math.floor((start+end)/2);
+           if(data[center] == find){
+            posting = center;
+            break;
+           }
+           else if(data[center]>find){
+            end = center-1;
+           }
+           else{
+            start = center+1;
+           }
+        }
+        console.log('This number is', posting+1 ,'posting');
+    </script>
+</head>
+
+<body>
+    <h1>Make a Binary search example</h1>
+</body>
+
+</html>
