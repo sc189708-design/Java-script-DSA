@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // start for a simple question
+        //Q1 find maximum number of this value
+        let data = [1, 6, 33, 7, , 23, 9, 11, 17]
+        let max = data[1]
+        for (i = 0; i <= data.length; i++) {
+            if (data[i] > max) {
+                max = data[i]
+            }
+        }
+        console.log('the max value is ', max)
+
+        //Q2 find Second largest element in array
+        function call1() {
+            let val = [1, 12, 14, 15, 22, 5, 7]
+            let first = -Infinity;
+            let second = -Infinity;
+            for (i = 0; i < val.length; i++) {
+                if (val[i] > first) {
+                    second = first
+                    first = val[i]
+                }
+                else if (val[i] > second && val[i] != first) {
+                    second = val[i]
+                }
+            }
+            console.log(first)
+        }
+
+        // another way to  solve this qustion
+        let val = [1, 2, 11, 4, 7, 5, 9]
+        let valm = val[0]
+        let secm = val[0]
+        for (i = 0; i < val.length; i++) {
+            if (val[i] > valm) {
+                secm = valm
+                valm = val[i]
+            }
+            else if (val[i] > secm && valm != val[i]) {
+                secm = val[i]
+            }
+        }
+        console.log(valm)
+
+        //Q3 check if array is sorted 
+        function call3(){
+            let isSorted = true
+            for (i = 0; i < arr1.length-1; i++) {
+                if (arr1[i]> arr1[i+1]) {
+                    isSorted = false
+                }
+            }
+            if(isSorted){
+                console.log('The array is sorted')
+            }
+            else{
+                console.log('The  array is not a sorted array')
+            }
+        }
+        call3(arr1 = [1, 4, 6, 3, 7]);
+        call3(arr1 = [1, 4, 6, 8, 9]);
+        
+    </script>
+</head>
+
+<body>
+    <h1>Today is Day three for my DSA journey!</h1>
+</body>
+
+</html>
