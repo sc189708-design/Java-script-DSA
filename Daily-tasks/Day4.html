@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4</title>
+    <script>
+        // Warm up 
+        //find max and second max value
+        let val = [1, 4, 7, 4, 12, 11, 17, 9, 34, 5, 6]
+        let max = [0];
+        let semax = [0];
+        for (i = 0; i < val.length; i++) {
+            if (val[i] > max) {
+                semax = max
+                max = val[i];
+            }
+            else if (val[i] > semax && val[i] != max) {
+                semax = val[i]
+            }
+        }
+        //console.log('this is the max value', max)
+        //console.log('this is the second max value', semax)
+
+        //Q2. Task 1 Pattern Building - Reverse an array.
+        // way 1 solve this problem
+        function way1() {
+            let rev = [1, 2, 3, 4, 5];
+            let reverse = [];
+            for (i = rev.length - 1; i >= 0; i--) {
+                reverse.push(rev[i])
+            }
+            console.log(reverse)
+        }
+        // way 2 solve this problem not make a extra varibel change in current variabel
+        function way2() {
+            let rev = [9, 4, 6, 3, 23]
+            for (i = 0; i < rev.length / 2; i++) {
+                let tem = rev[i]
+                rev[i] = rev[rev.length - 1 - i]
+                rev[rev.length - 1 - i] = tem
+            }
+            console.log(rev)
+        }
+        way2();
+
+        //Q2. romove duplicates values
+        function call2() {
+            let duplicate = [1, 2, 3, 6, 3, 1, 2, 3]
+            let array = [];
+            for (i = 0; i < duplicate.length; i++) {
+                if (!array.includes(duplicate[i])) {
+                    array.push(duplicate[i])
+                }
+            }
+            console.log(array)
+        }
+        call2();
+
+        // way two solve ths qustion
+        function call3() {
+            let val = [1, 2, 3, 3, 2, 1, 2]
+            let chaek = [];
+            for (i = 0; i < val.length; i++) {
+                let found = false;
+                for (j = 0; j < val.length; j++) {
+                    if (val[i] === chaek[j]) {
+                        found = true;
+                    }
+                }
+                if (found === false) {
+                    chaek.push(val[i])
+                } 
+            }
+            console.log(chaek)
+            call3();
+        }
+        // this qustion shorket way to solve this qustion
+        let value = [1,2,3,3,2,2,5];
+        let removeduplicate = [... new Set(value)]
+        console.log(removeduplicate)
+
+        //Q3 in this i find a missing number in array
+        let num = [1,2,4,5]
+        let nmax = 5;
+        let formula = (nmax*(nmax+1))/2;
+        let acual = 0;
+        for(i=0; i<num.length ; i++){
+            acual += num[i]
+        }
+        let missing = formula - acual;
+        console.log(missing)
+    </script>
+</head>
+
+<body>
+    <h1>today is my day four to contionew Dsa in java-script </h1>
+</body>
+
+</html>
