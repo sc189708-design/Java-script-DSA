@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test day</title>
+    <script>
+        //Q 1 find max value
+        function qustion1() {
+            let val = [1, 4, 7, 34, 31, 4, 5, 7]
+            let max = val[0]
+            for (let i = 0; i < val.length; i++) {
+                if (val[i] > max) {
+                    max = val[i]
+                }
+            }
+            console.log('this is largest number', max)
+        }
+        qustion1()
+
+        //Q2 find second largest value 
+        function qustion2() {
+            let val = [1, 4, 7, 41, 3, 8, 33, 2, 47, 32]
+            let valmax = val[0]
+            let valsecmax = val[0]
+            for (let i = 0; i < val.length; i++) {
+                if (val[i] > valmax) {
+                    valsecmax = valmax
+                    valmax = val[i]
+                }
+                else if (val[i] > valsecmax && val[i] != valmax) {
+                    valsecmax = val[i]
+                }
+            }
+            console.log('the max vlaue is ', valmax)
+            console.log('the secmax vlaue is  ', valsecmax)
+        }
+        qustion2();
+
+        // Q3 check shorted array
+        function qusiton3() {
+            let val1 = [2, 4, 6, 2, 1, 8]
+            let val2 = [2, 5, 7, 9, 11]
+            let result = true;
+            let result2 = true;
+            for (let i = 0; i < val1.length && val2.length; i++) {
+                if (val1[i] > val1[i + 1]) {
+                    result = false;
+                    break;
+                }
+                else {
+                    result = true;
+                }
+                if (val2[i] > val2[i]) {
+                    result2 = false;
+                    break;
+                }
+                else {
+                    result2 = true;
+                }
+            }
+            console.log('Is first array is a shorted array:', result)
+            console.log('Is second aray is a shorted array:', result2)
+        }
+        qusiton3()
+
+        // Q4 Revers Array 
+        function qustion4() {
+            let val = [1, 2, 3, 4, 5, 6, 7]
+            let rev = [];
+            for (let i = val.length - 1; i >= 0; i--) {
+                rev.push(val[i])
+            }
+            console.log(rev)
+        }
+        qustion4();
+
+        // Q5 Remove Duplicates
+        function qustion5() {
+            let val = [1, 2, 3, 2, 1, 5, 3, 1, 2, 5, 5]
+            let unique = [];
+            for (let i = 0; i < val.length; i++) {
+                if (unique.indexOf(val[i]) === -1) {
+                    unique.push(val[i])
+
+                }
+            }
+            console.log(unique)
+
+            // anothe method 
+            let val2 = [1, 2, 3, 2, 4, 3, 1, 2, 5, 7, 5, 7]
+            let uniqueval = [];
+            for (i = 0; i < val2.length; i++) {
+                let found = false;
+                for (j = 0; j < val2.length; j++) {
+                    if (val2[i] === uniqueval[j]) {
+                        found = true;
+                    }
+                }
+                if (found === false) {
+                    uniqueval.push(val2[i])
+                }
+            }
+            console.log(uniqueval)
+        }
+        qustion5();
+
+        // find missing number 
+        function qustion6() {
+            let val = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+            let n = 12
+            let find = (n * (n + 1)) / 2
+            let misnum = 0;
+            for (i = 0; i < val.length; i++) {
+                misnum += val[i]
+            }
+            misval = find - misnum
+            console.log('The missing number is ', misval)
+        }
+        qustion6();
+    </script>
+</head>
+
+<body>
+    <h1>Today is test day of dsa whatever we learn in last few days...</h1>
+</body>
+
+</html>
