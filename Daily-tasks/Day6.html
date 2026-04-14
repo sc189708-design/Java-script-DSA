@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6</title>
+    <script>
+        //Q1 Check if  arry is palindrome 
+        function fun1() {
+            let str = [1, 2, 3];
+            let start = [];
+            let end = [];
+            for (let i = 0; i < str.length; i++) {
+                start.push(str[i]);
+            }
+            for (let j = str.length - 1; j >= 0; j--) {
+                end.push(str[j]);
+            }
+            if (start.toString() === end.toString()) {
+                console.log("The array is palindrome");
+            }
+            else {
+                console.log("The array is not palindrome");
+            }
+        }
+        fun1();
+
+        // way Two solve this problem
+        function val(pail) {
+            let str = 0
+            let end = pail.length - 1
+            while (str < end) {
+                if (pail[str] !== pail[end]) {
+                    return false;
+                }
+                str++
+                end--
+            }
+            return true;
+        }
+        console.log(val([1, 2, 3, 4]))
+        console.log(val([1, 2, 1]))
+
+        // Q2 remove all zeros
+        function fun2() {
+            let str = [1, 2, 0, 4, 0, 51, 0, 0, 2, 3]
+            let remove = 0;
+            result = [];
+            for (i = 0; i < str.length; i++) {
+                if (remove === str[i]) {
+                    continue;
+                }
+                else {
+                    result.push(str[i])
+                }
+            }
+            console.log(result)
+
+            // way 2 move all zeros to end 
+
+            let data = [1, 0, 2, 0, 3, 0, 5, 0, 6, 3, 2, 1]
+            move = 0;
+            console.log(data)
+            for (i = 0; i < data.length - 1; i++) {
+                if (move === data[i]) {
+                    for (let j = i + 1; j < data.length; j++) {
+                        if (move === data[i]) {
+                            // let tem = data[i]
+                            // data[i] = data[j]
+                            // data[j] = tem 
+                            [data[i], data[j]] = [data[j], data[i]]
+                        }
+                    }
+                }
+            }
+            console.log(data)
+
+            // this is easy way to solve this problem 
+            let array = [1, 0, 2, 0, 0, 5, 6, 7]
+            let j = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] !== 0) {
+                    [array[i], array[j]] = [array[j], array[i]]
+                    j++
+                }
+            }
+            console.log(array)
+        }
+        fun2();
+
+        // Q3 find the pair of sum in array
+        function fun3() {
+            let val = [1, 3, 5, 6, 8, 9, 11];
+            let total = 15;
+            let i = 0
+            let j = val.length - 1;
+            console.log('find value is ', total)
+            while (i < j) {
+                let sum = val[i] + val[j]
+                if (sum === total) {
+                    console.log(`${val[i]} , ${val[j]}`)
+                    return
+                }
+                else if(sum<total){
+                    i++
+                }
+                else{
+                    j--
+                }
+            }
+        }
+        fun3()
+    </script>
+</head>
+
+<body>
+    <h1>Hey today is day 6 of my dsa in java script journey!</h1>
+</body>
+
+</html>
