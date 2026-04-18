@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7</title>
+    <script>
+        //Q1 Subarrays
+        function fun1() {
+            let array = [2, 1, 5, 1, 3, 2, 7, 2];
+            let nums = array[0];
+            let max = array[0];
+            for (let i = 0; i < array.length; i++) {
+                nums = array[i]
+                for (let j = i + 1; j < array.length; j++) {
+                    nums = nums + array[j]
+                }
+                if (nums > max) {
+                    max = nums
+                }
+                max = Math.max(max, nums)
+            }
+            //  console.log('The max subarrays value',max)
+        }
+        fun1();
+
+        // Max sum subarray (count=3) 
+        function fun2() {
+            let array = [1, 4, 3, 4, 6, 7, 2]
+            let count = 3;
+            let add = 0;
+            for (let i = 0; i < count; i++) {
+                add += array[i];
+            }
+            let sum = add;
+            for (let i = count; i < array.length; i++) {
+                add = add + array[i] - array[i-count]
+                sum = Math.max(add, sum)
+            }
+            console.log('this is the total sum is',sum)
+        }
+        fun2()
+    </script>
+</head>
+
+<body>
+    <h1>Hey today is my Day 7 of my dsa journey</h1>
+</body>
+
+</html>
